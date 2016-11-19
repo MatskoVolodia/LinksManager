@@ -1,0 +1,7 @@
+C:\vova\epam\Angular\LinksManagerHW\LinksManager.Repositories\bin\Debug\LinksManager.Repositories.dll
+C:\vova\epam\Angular\LinksManagerHW\LinksManager.Repositories\bin\Debug\LinksManager.Repositories.pdb
+C:\vova\epam\Angular\LinksManagerHW\LinksManager.Repositories\bin\Debug\LinkManager.Entities.dll
+C:\vova\epam\Angular\LinksManagerHW\LinksManager.Repositories\bin\Debug\LinkManager.Entities.pdb
+C:\vova\epam\Angular\LinksManagerHW\LinksManager.Repositories\obj\Debug\LinksManager.Repositories.csprojResolveAssemblyReference.cache
+C:\vova\epam\Angular\LinksManagerHW\LinksManager.Repositories\obj\Debug\LinksManager.Repositories.dll
+C:\vova\epam\Angular\LinksManagerHW\LinksManager.Repositories\obj\Debug\LinksManager.Repositories.pdb

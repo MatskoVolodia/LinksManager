@@ -1,0 +1,78 @@
+﻿@model PagedList.IPagedList<LinkManager.Entities.LinkEntity>
+@using PagedList.Mvc; 
+@using PagedList;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles
+{  
+    <link href="~/Styles/site.css" rel="stylesheet" /> 
+    <link href="~/Styles/PagedList.css" rel="stylesheet" type="text/css" />
+}
+
+@section HeadScripts
+{
+<script src="/Scripts/app/pages/links/links.module.js"></script>
+<script src="/Scripts/app/pages/links/links.controller.js"></script>
+<script src="~/Scripts/app/pages/links/links.service.js"></script>
+}
+
+<section class="content" ng-app="linksModule">
+    <section ng-controller="LinkController as linksCtrl">
+        <h2>Links of {{linksCtrl.user}}</h2> <hr />
+
+        <section class="searcher">
+            @using (Html.BeginForm("Index", "Link", FormMethod.Get))
+            {
+                @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
+                <input type="submit" value="Search" />
+            }
+            <button id="addnewbtn" ng-click="linksCtrl.toggleAdder()" class="btn">Add New</button>
+        </section>
+
+        <div class="adder" ng-show="linksCtrl.showAdder">
+            <input id="adderTextField" type="text" placeholder="Input new url" ng-model="linksCtrl.newLinkName" />
+            <button ng-click="linksCtrl.onAddNewLink()" ng-disabled="!linksCtrl.isLinkValid(linksCtrl.newLinkName)" class="btn">Add</button>
+        </div>
+
+        <div class="linksTable">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><label>Link</label></th>
+                        <th><label>Date</label></th>
+                        <th><label>Remove</label></th>
+                        <th><label>Edit</label></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="link in linksCtrl.links | orderBy: 'Date': true | filter: linksCtrl.textFilter track by $index" ng-class="{link}">
+                        <td>
+                            <a href="{{link.LinkName}}">{{link.LinkName}}</a>
+                        </td>
+                        <td>
+                            {{ link.Date | jsDate | date:"yyyy-MM-dd" }}
+                        </td>
+                        <td>
+                            <button class="btn" ng-click="linksCtrl.removeLink(link)">REMOVE</button>
+                        </td>
+                        <td>
+                            <button class="btn" ng-click="linksCtrl.openEdit(link)">EDIT</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, currentFilter = ViewBag.CurrentFilter }))        
+        </div>
+
+        <div class="editor" ng-show="linksCtrl.onEdit">
+            <input id="editedUrlField" type="text" ng-model="linksCtrl.editedLinkName" /> <br /> <br />
+            <button ng-click="linksCtrl.editLink(linksCtrl.itemOnEdit)" ng-disabled="!linksCtrl.isLinkValid(linksCtrl.editedLinkName)" class="btn">Save</button>
+            <button ng-click="linksCtrl.closeEdit()" class="btn">Cancel</button>
+        </div>
+</section>
+</section>

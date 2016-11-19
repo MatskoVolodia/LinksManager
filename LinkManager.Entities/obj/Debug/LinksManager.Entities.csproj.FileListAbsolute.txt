@@ -1,0 +1,5 @@
+C:\vova\epam\Angular\LinksManagerHW\LinkManager.Entities\bin\Debug\LinkManager.Entities.dll
+C:\vova\epam\Angular\LinksManagerHW\LinkManager.Entities\bin\Debug\LinkManager.Entities.pdb
+C:\vova\epam\Angular\LinksManagerHW\LinkManager.Entities\obj\Debug\LinkManager.Entities.dll
+C:\vova\epam\Angular\LinksManagerHW\LinkManager.Entities\obj\Debug\LinkManager.Entities.pdb
+C:\vova\epam\Angular\LinksManagerHW\LinkManager.Entities\obj\Debug\LinksManager.Entities.csprojResolveAssemblyReference.cache

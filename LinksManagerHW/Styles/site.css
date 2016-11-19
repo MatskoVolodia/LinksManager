@@ -1,0 +1,75 @@
+﻿html, body {
+	width: 100%;
+    background-color: lightslategrey;
+    box-sizing: border-box;
+}
+
+h2{
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    color: white;
+}
+
+.content {
+	width: 970px;
+	margin: auto;
+}
+
+.searcher{
+    width: 60%;
+    text-align: center;
+    border: 2px solid white;
+    padding: 10px;
+    float: left;
+}
+
+.ng-pristine{
+    float: left;
+}
+
+#addnewbtn{
+    float: right;
+}
+
+a{
+    color: black;
+}
+
+.adder, .editor{
+    float: right;
+    width: 35%;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+.linksTable{
+    float: left;
+    width: 60%;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+#textFilter{
+    width: 80%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#adderTextField, #editedUrlField{
+    width: 80%;
+}
